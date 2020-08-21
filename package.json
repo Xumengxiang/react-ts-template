@@ -1,0 +1,21 @@
+{
+  "name": "react-ts-template",
+  "version": "1.0.0",
+  "description": "Quickly create react + typescript project development environment and scaffold for developing npm package components",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xumengxiang/react-ts-template.git"
+  },
+  "keywords": ["react-project", "typescript-project", "react-typescript", "react-ts-quick-starter"],
+  "author": {
+    "name": "Xumengxiang",
+    "url": "https://github.com/Xumengxiang",
+    "email": "1203433230@qq.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xumengxiang/react-ts-template/issues"
+  },
+  "homepage": "https://github.com/Xumengxiang/react-ts-template#readme"
+}
