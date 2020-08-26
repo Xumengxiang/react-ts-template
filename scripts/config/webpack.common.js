@@ -37,7 +37,7 @@ const getCssLoaders = (importLoaders) => [
 
 module.exports = {
   entry: {
-    app: path.resolve(PROJECT_PATH, './src/app.js'),
+    app: path.resolve(PROJECT_PATH, './src/index.js'),
   },
   output: {
     filename: `js/[name]${isDev ? '' : '.[hash:8]'}.js`,
@@ -45,6 +45,14 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(tsx?|js)$/,
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true,
+        },
+        exclude: '/node_modules/',
+      },
       {
         test: /\.css$/,
         use: getCssLoaders(1),
@@ -88,10 +96,15 @@ module.exports = {
       },
       {
         test: /\.(ttf|woff|woff2|eot|otf)$/,
-        options: {
-          name: '[name].[contenthash:8].[ext]',
-          outputPath: 'assets/fonts',
-        },
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name].[contenthash:8].[ext]',
+              outputPath: 'assets/fonts',
+            },
+          },
+        ],
       },
     ],
   },
